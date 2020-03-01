@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import TeamBox from "./teamBox.js";
-import UserBox from "./userBox.js"
+import UserBox from "./userBox.js";
+import Button from 'react-bootstrap/Button';
+import Form from "react-bootstrap/Form";
 import '../App.css';
 const axios = require("axios");
 
@@ -19,9 +21,9 @@ function MainData({ users, teams }) {
   const changeSearch = () => {
     setIsTeamSearch(!isTeamSearch);
     if(isTeamSearch) {
-      setSearchMsg("Change to User");
-    } else {
       setSearchMsg("Change to Team");
+    } else {
+      setSearchMsg("Change to User");
     }
   }
 
@@ -88,22 +90,21 @@ function MainData({ users, teams }) {
   }
   return (
     <div >
-      
       <div>
         {isTeamSearch ? 
         <div style={space}>  
           <h2 style={space}> Viewing Teams</h2>
-          <span style={space}>Enter Team:</span>
-          <input onChange={updateTeam} label="Enter Team Name" value={teamText} />
+          <div>Enter Team Name</div>
+          <input onChange={updateTeam} type="text" value={teamText} />
         </div>
         :
         <div style={space}>
-          <div style={space}> Viewing Teams</div> 
-          <span style={space}>Enter Name:</span> 
-          <input onChange={updateName} label="Enter First Name" value={name} />
+          <h2 style={space}> Viewing Teams</h2>  
+          <div>Enter User Name</div>
+          <input onChange={updateName} type="text" value={name} />
         </div>}
       </div>
-      <button onClick={changeSearch}>{searchMsg}</button>
+      <Button variant="dark" onClick={changeSearch}>{searchMsg}</Button>
       <div className="boxes">
         {isTeamSearch ? showTeams() : showUsers()}
       </div>
@@ -117,9 +118,3 @@ function MainData({ users, teams }) {
 
 export default MainData;
 
-/* <div>
-        <input onClick={changeToTeam} type="radio" id="team" name="search" value="team"></input>
-        <label for="team">Team</label>
-        <input type="radio" id="user" name="search" value="user"></input>
-        <label for="user">User</label>
-      </div> */

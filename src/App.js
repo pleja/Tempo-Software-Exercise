@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import MainData from "./components/form.js";
 import './App.css';
+
 const axios = require("axios");
 
 const mainTitle = {
@@ -30,7 +31,7 @@ function App() {
             team: id[count].teamId
           }
           people.push(user);
-          if (count < id.length - 450) {
+          if (count < id.length - 1) {
             let num = count + 1;
             setNumber(count);
             checkIndividual(num, id);
