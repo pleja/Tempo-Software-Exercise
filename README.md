@@ -20,7 +20,7 @@ User view displays all user names and their corresponding team names. They have 
 
 Both modes contain a search function, which checks if the input string is contained within the user names (first and/or last) or team names (depending on the view mode).
 
-You may access this app at:
+You may access this app at: https://affectionate-brahmagupta-5e5b7d.netlify.com/ .
 If the link is no longer avaialable, you can install the app by cloning this repository, running "npm install", then "npm start".
 
 Thank you for testing my applet and I appreciate any feedback!

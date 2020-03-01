@@ -83,8 +83,6 @@ function App() {
           setTeams(teams);
           setUsers(newUsers);
           setIsReady(true); //exits loading mode and enables rendering of data
-          console.log(teams);
-          console.log(newUsers);
         })
         .catch((err) => {
           console.log(err);
@@ -94,7 +92,6 @@ function App() {
     //pulls initial list of users, then initiates a recursive function to update first and last names.
     axios.get("https://tempo-exercises.herokuapp.com/rest/v1/users")
       .then((response) => {
-        console.log(response);
         setTotal(response.data.length);
         checkIndividual(0, response.data);
       })
