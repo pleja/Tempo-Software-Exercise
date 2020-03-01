@@ -1,68 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tempo Software Exercise - Front End
+By: Pawel Leja
 
-## Available Scripts
+Written in React.JS
 
-In the project directory, you can run:
+Here is my solution to the technical exercise for the front-end developer position. 
 
-### `yarn start`
+I have written this applet from the bottom up, beginning with api calls, setting up the data for use,
+then constructing the functionality of the UI and finishing off with some styling.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+In order to acquire user names, I use a recursive function to make calls for each user ID. During this time, a loading screen
+is in place which shows progress out of total users.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Once the data is loaded, there are two views available: Team and Users, with Team as default.
 
-### `yarn test`
+Team view displays components for each time including team names, leader name, and a list of members. The member list can be toggled
+with a button in order keep a default clean look. Members are alphabetized by last name.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+User view displays all user names and their corresponding team names. They have also been alphabetized by last name.
 
-### `yarn build`
+Both modes contain a search function, which checks if the input string is contained within the user names (first and/or last) or team names (depending on the view mode).
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+You may access this app at:
+If the link is no longer avaialable, you can install the app by cloning this repository, running "npm install", then "npm start".
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Thank you for testing my applet and I appreciate any feedback!

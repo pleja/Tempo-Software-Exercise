@@ -11,16 +11,21 @@ const mainTitle = {
 }
 
 function App() {
+
+  //State
   const[users, setUsers] = React.useState([]);
   const[teams, setTeams] = React.useState([]);
   const[isReady, setIsReady] = React.useState(false);
   const[number, setNumber] = React.useState(0);
   const[total, setTotal] = React.useState(0);
 
+  //API data acquisition
   useEffect(() => {
     let people = [];
     let teams = [];
 
+
+    //recursive function to acquire each user first/last name. Creates user objects and packs into users list.
     const checkIndividual = (count, id) => {
       axios.get(`https://tempo-exercises.herokuapp.com/rest/v1/users/${id[count].userId}/`)
         .then((res) => {
@@ -45,6 +50,7 @@ function App() {
         })
     }
 
+    //called upon end of checkIndividual(). Pulls team data, packs into teams list.
     const checkTeams = (people) => {
       axios.get(`https://tempo-exercises.herokuapp.com/rest/v1/teams`)
         .then((res) => {
@@ -76,7 +82,7 @@ function App() {
 
           setTeams(teams);
           setUsers(newUsers);
-          setIsReady(true);
+          setIsReady(true); //exits loading mode and enables rendering of data
           console.log(teams);
           console.log(newUsers);
         })
@@ -85,6 +91,7 @@ function App() {
         })
     }
 
+    //pulls initial list of users, then initiates a recursive function to update first and last names.
     axios.get("https://tempo-exercises.herokuapp.com/rest/v1/users")
       .then((response) => {
         console.log(response);
@@ -96,6 +103,7 @@ function App() {
       });
   }, []);
 
+  //Loading screen shows progress of recursive function.
   return (
     <div className="App">
       <div style={mainTitle}>Tempo Exercise App</div>

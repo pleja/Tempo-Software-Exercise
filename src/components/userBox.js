@@ -12,6 +12,8 @@ const boxStyle = {
     margin: "15px",
     backgroundColor: "grey"
 }
+
+//Simple component showing user name and team
 function UserBox({ name, team }) {
 
     return (
